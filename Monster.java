@@ -8,6 +8,7 @@ public class Monster
   private int strength; //Monster's strength should be betwin 0-10
   private int wrath; //Monster's wrath should be betwin 0-10
   private int number;//monster number
+  private int battleNo = 0;//number of battle
   private String opponent1, opponent2, opponent3;
   private String result1,result2,result3;   
 
@@ -31,24 +32,44 @@ public class Monster
       //rerunting the created monster
       return monster;  
   }   
-  public void fightVs(String opponent, int number)
+  public void fightVs(Monster opponent)
   {
-    switch(number)
+    battleNo++; 
+    
+    switch(battleNo)
     {
         
       case 1 : 
-        this.opponent1 = opponent;
+        this.opponent1 = opponent.name;
         break;
 
       case 2 :
-        this.opponent2 = opponent;
+        this.opponent2 = opponent.name;
         break;
 
       case 3 :
-        this.opponent3 = opponent;
+        this.opponent3 = opponent.name;
         break;//this is just for cleaner code
     }
-  }    
+  }
+
+  public void setResult(String result)
+  {
+      switch(battleNo)
+      {
+          case 1 :
+              this.result1 = result;
+              break;
+          case 2 :
+              this.result2 = result;
+              break;
+          case 3 :
+              this.result3 = result;
+              break;//this is just for cleaner code
+      }
+  } 
+
+      
   public void showName()
   {
     System.out.println("name: " + name + "\n" +
