@@ -32,7 +32,7 @@ public class Monster
       //rerunting the created monster
       return monster;  
   }   
-  public void fightVs(Monster opponent)
+  public Monster fightVs(Monster opponent)
   {
     battleNo++; 
     
@@ -51,6 +51,7 @@ public class Monster
         this.opponent3 = opponent.name;
         break;//this is just for cleaner code
     }
+    return this;
   }
 
   public void setResult(String result)
