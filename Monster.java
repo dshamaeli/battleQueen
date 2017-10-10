@@ -31,8 +31,24 @@ public class Monster
 
       //rerunting the created monster
       return monster;  
-  }   
-  public Monster fightVs(Monster opponent)
+  }
+  public int getAttribute(String attribute)
+  {
+      switch (attribute)
+      {
+          case "strength":
+              return strength;
+
+          case "wrath" :
+              return wrath; 
+          default :
+              System.out.println(attribute+" is not a valid attribute!!");
+              return 0;  
+      } 
+  }          
+
+
+  public void fightVs(Monster opponent)
   {
     battleNo++; 
     
@@ -51,7 +67,6 @@ public class Monster
         this.opponent3 = opponent.name;
         break;//this is just for cleaner code
     }
-    return this;
   }
 
   public void setResult(String result)
