@@ -6,9 +6,9 @@ class MysthicalLand
     
     public static void main(String args[])
     {
-        Monster monster = Monster.create(1);
-        monster.showName();
-        System.out.println("strengt: "+monster.getAttribute("strength"));
+        Monster monster = Monster.create();
+        System.out.println("name: " + monster.showName() + "strengt: " + 
+                monster.getAttribute("strength"));
     }
 
 }
