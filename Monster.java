@@ -106,8 +106,8 @@ public class Monster
   {     
       System.out.println("\n##################\n");
       System.out.println("I am " + name + ", I:");
-      System.out.println(result1 + " My first battle No.1 VS " + opponent1);
-      System.out.println(result2 + " the Second VS " + opponent2);
-      System.out.println(result3 + " the third VS " + opponent3);
+      System.out.println(result1 + " My first battle VS " + opponent1);
+      System.out.println(result2 + " the Second battle VS " + opponent2);
+      System.out.println(result3 + " the third battle VS " + opponent3);
   } 
 }
