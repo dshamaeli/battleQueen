@@ -1,3 +1,9 @@
+/** Author:Daniel Shamaeli, Student ID:201230464
+    this is the second assigment for COMP517
+    https://github.com/dshamaeli/battleQueen
+ */
+
+//impoert package to read data
 package battleQueen;
 
 import monster.Monster;

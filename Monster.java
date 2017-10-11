@@ -1,3 +1,8 @@
+/** Author:Daniel Shamaeli, Student ID:201230464
+    this is the second assigment for COMP517
+    https://github.com/dshamaeli/battleQueen
+ */
+
 package monster;
 
 import java.util.Scanner;
