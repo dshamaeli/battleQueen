@@ -16,11 +16,12 @@ public class BattleQueen
         int opponent2_strength = monster2.getAttribute("strength");
         int opponent2_wrath = monster2.getAttribute("wrath");   
         battleNo++;
-        System.out.println("battle No."+ battleNo +"starts\n"+
+        System.out.println("\n*********************\n");
+        System.out.println("battle No."+ battleNo +" starts\n\n"+
                 monster1.showName() + " VS " + monster2.showName());
     
-        monster1.fightVs(monster2,battleNo);
-        monster2.fightVs(monster1,battleNo);
+        monster1.fightVs(monster2);
+        monster2.fightVs(monster1);
 
         if (opponent1_strength > opponent2_strength)
         {
@@ -61,7 +62,7 @@ public class BattleQueen
 
     public void tournament(Monster monster1, Monster monster2, Monster monster3, Monster monster4)
     {
-        System.out.println("The Tournament begins...\n participants are:"+
+        System.out.println("The Tournament begins...participants are:\n"+
                                                         monster1.showName()+",\n"+
                                                         monster2.showName()+",\n"+
                                                         monster3.showName()+"and\n"+

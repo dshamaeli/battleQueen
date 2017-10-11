@@ -9,9 +9,9 @@ public class Monster
   private int wrath; //Monster's wrath should be betwin 0-10
   private int number;//monster's number
   private static int counter = 0;//to count monsters
-  private static int battleNo;
-  private String opponent1, opponent2, opponent3;
-  private String result1,result2,result3;   
+  private static int battleNo = 0;//count's monster battles
+  private String opponent1, opponent2, opponent3;//store opponents
+  private String result1,result2,result3;//store battles result   
 
   private static Scanner input = new Scanner(System.in);//input scanner
   
@@ -20,7 +20,8 @@ public class Monster
   {
       Monster monster = new Monster();
       monster.number = ++counter;
-
+        
+      
       System.out.print("Please inter name for monster No." + monster.number +" :");
       monster.name = input.nextLine();
 
@@ -29,8 +30,9 @@ public class Monster
 
       System.out.print("Please inter " + monster.name + " wrath(0-10): ");
       monster.wrath = input.nextInt();
-     // input.next();
-
+      
+      input.nextLine();// skip unwanted return
+      
       //rerunting the created monster
       return monster;  
   }
@@ -50,10 +52,10 @@ public class Monster
   }          
 
 
-  public void fightVs(Monster opponent,int battle)
+  public void fightVs(Monster opponent)
   {
-    battleNo = battle;  
-    switch(battle)
+    battleNo++;  
+    switch(battleNo)
     {
       case 1 : 
         this.opponent1 = opponent.name;
@@ -84,6 +86,7 @@ public class Monster
               break;//this is just for cleaner code
           default :
                 System.out.println("something is wrong");    
+
       }
   } 
 
