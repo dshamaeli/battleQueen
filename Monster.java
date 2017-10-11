@@ -21,7 +21,7 @@ public class Monster
       Monster monster = new Monster();
       monster.number = ++counter;
 
-      System.out.print("Please inter monster No. " + monster.number +"name: ");
+      System.out.print("Please inter name for monster No." + monster.number +" :");
       monster.name = input.nextLine();
 
       System.out.print("Please inter " + monster.name + " strength(0-10): ");
@@ -29,6 +29,7 @@ public class Monster
 
       System.out.print("Please inter " + monster.name + " wrath(0-10): ");
       monster.wrath = input.nextInt();
+     // input.next();
 
       //rerunting the created monster
       return monster;  
