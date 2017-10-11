@@ -18,7 +18,9 @@ public class BattleQueen
         battleNo++;
         System.out.println("\n*********************\n");
         System.out.println("battle No."+ battleNo +" starts\n\n"+
-                monster1.showName() + " VS " + monster2.showName());
+                monster1.showName() + "(" + opponent1_strength +"," +
+                opponent1_wrath +") VS " + monster2.showName() +"("+
+                opponent2_strength + "," + opponent2_wrath + ")");
     
         monster1.fightVs(monster2);
         monster2.fightVs(monster1);
@@ -73,5 +75,11 @@ public class BattleQueen
         fight( monster2 , monster3 );
         fight( monster2 , monster4 );
         fight( monster3 , monster4 );
+
+        System.out.println("\n\nThe tournament if finished and the results are:");
+        monster1.showResults();
+        monster2.showResults();
+        monster3.showResults();
+        monster4.showResults();
     } 
 }

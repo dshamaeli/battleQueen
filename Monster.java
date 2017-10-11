@@ -9,7 +9,7 @@ public class Monster
   private int wrath; //Monster's wrath should be betwin 0-10
   private int number;//monster's number
   private static int counter = 0;//to count monsters
-  private static int battleNo = 0;//count's monster battles
+  private int battleNo = 0;//count's monster battles
   private String opponent1, opponent2, opponent3;//store opponents
   private String result1,result2,result3;//store battles result   
 
@@ -22,7 +22,7 @@ public class Monster
       monster.number = ++counter;
         
       
-      System.out.print("Please inter name for monster No." + monster.number +" :");
+      System.out.print("Please inter name for monster No." + monster.number +": ");
       monster.name = input.nextLine();
 
       System.out.print("Please inter " + monster.name + " strength(0-10): ");
@@ -36,6 +36,13 @@ public class Monster
       //rerunting the created monster
       return monster;  
   }
+      
+  public String showName()
+  {
+    return name;
+
+  }
+
   public int getAttribute(String attribute)
   {
       switch (attribute)
@@ -73,6 +80,7 @@ public class Monster
 
   public void setResult(String result)
   {
+      System.out.println("this is " + name +" battleNo:" + battleNo);
       switch(battleNo)
       {
           case 1 :
@@ -88,12 +96,13 @@ public class Monster
                 System.out.println("something is wrong");    
 
       }
-  } 
-
-      
-  public String showName()
-  {
-    return name;
-
   }
+  public void showResults()
+  {     
+      System.out.println("\n##################\n");
+      System.out.println("I am " + name + ", I:");
+      System.out.println(result1 + " My first battle No.1 VS " + opponent1);
+      System.out.println(result2 + " the Second VS " + opponent2);
+      System.out.println(result3 + " the third VS " + opponent3);
+  } 
 }
