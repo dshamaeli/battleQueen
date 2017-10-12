@@ -3,12 +3,9 @@
     https://github.com/dshamaeli/battleQueen
  */
 
-import monster.Monster;
-import battleQueen.BattleQueen;
-
-class MysthicalLand
+class MythicalLand
 {
-    
+
     public static void main(String args[])
     {
         Monster monster1 = Monster.create();

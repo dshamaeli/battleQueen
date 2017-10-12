@@ -3,8 +3,6 @@
     https://github.com/dshamaeli/battleQueen
  */
 
-package monster;
-
 import java.util.Scanner;
 
 public class Monster
@@ -16,17 +14,17 @@ public class Monster
   private static int counter = 0;//to count monsters
   private int battleNo = 0;//count's monster battles
   private String opponent1, opponent2, opponent3;//store opponents
-  private String result1,result2,result3;//store battles result   
+  private String result1,result2,result3;//store battles result
 
   private static Scanner input = new Scanner(System.in);//input scanner
-  
+
   //creats a monster based on user input
   public static Monster create()
   {
       Monster monster = new Monster();
       monster.number = ++counter;
-        
-      
+
+
       System.out.print("Please inter name for monster No." + monster.number +": ");
       monster.name = input.nextLine();
 
@@ -35,13 +33,13 @@ public class Monster
 
       System.out.print("Please inter " + monster.name + " wrath(0-10): ");
       monster.wrath = input.nextInt();
-      
+
       input.nextLine();// skip unwanted return
-      
+
       //rerunting the created monster
-      return monster;  
+      return monster;
   }
-      
+
   public String showName()
   {
     return name;
@@ -56,20 +54,20 @@ public class Monster
               return strength;
 
           case "wrath" :
-              return wrath; 
+              return wrath;
           default :
               System.out.println(attribute+" is not a valid attribute!!");
-              return 0;  
-      } 
-  }          
+              return 0;
+      }
+  }
 
 
   public void fightVs(Monster opponent)
   {
-    battleNo++;  
+    battleNo++;
     switch(battleNo)
     {
-      case 1 : 
+      case 1 :
         this.opponent1 = opponent.name;
         break;
 
@@ -98,16 +96,16 @@ public class Monster
               this.result3 = result;
               break;//this is just for cleaner code
           default :
-                System.out.println("something is wrong");    
+                System.out.println("something is wrong");
 
       }
   }
   public void showResults()
-  {     
+  {
       System.out.println("\n##################\n");
       System.out.println("I am " + name + ", I:");
       System.out.println(result1 + " My first battle VS " + opponent1);
       System.out.println(result2 + " the Second battle VS " + opponent2);
       System.out.println(result3 + " the third battle VS " + opponent3);
-  } 
+  }
 }
