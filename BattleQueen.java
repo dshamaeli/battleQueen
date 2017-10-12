@@ -21,27 +21,35 @@
         this.monster4 = monster4;
     }
 
+    // start and judged the fight (could be splited at next refactor)
     private void fight(Monster monster1, Monster monster2)
     {
-        int opponent1_strength = monster1.getAttribute("strength");
-        int opponent1_wrath = monster1.getAttribute("wrath");
-        int opponent2_strength = monster2.getAttribute("strength");
-        int opponent2_wrath = monster2.getAttribute("wrath");
-        battleNo++;
+        //fight
+
+        int opponent1_strength = monster1.getAttribute("strength");//get monster1 strength
+        int opponent1_wrath = monster1.getAttribute("wrath"); //get monster 1 wrath
+        int opponent2_strength = monster2.getAttribute("strength");//get monster1 strength
+        int opponent2_wrath = monster2.getAttribute("wrath");//get monster 1 wrath
+
+        battleNo++; //counts battles
+
         System.out.println("\n*********************\n");
         System.out.println("battle No."+ battleNo +" starts\n\n"+
                 monster1.showName() + "(" + opponent1_strength +"," +
                 opponent1_wrath +") VS " + monster2.showName() +"("+
                 opponent2_strength + "," + opponent2_wrath + ")");
 
-        monster1.fightVs(monster2);
-        monster2.fightVs(monster1);
+        monster1.fightVs(monster2); //ask Monster to fight opponent
+        monster2.fightVs(monster1); //ask Monster to fight opponent
 
+        //judgement
+        
+        //compare strenght
         if (opponent1_strength > opponent2_strength)
         {
 
-            monster1.setResult(WON);
-            monster2.setResult(LOST);
+            monster1.setResult(WON); //Monster 1 won
+            monster2.setResult(LOST); //Monster 2 lose
         }
         else
         {
@@ -66,14 +74,15 @@
                    }
                    else
                    {
-                       monster1.setResult(TIE);
-                       monster2.setResult(TIE);
+                       monster1.setResult(TIE); // tie situation
+                       monster2.setResult(TIE); //tie situation
                    }
                }
             }
         }
     }
 
+    //starts a tournament
     public void tournament()
     {
         System.out.println("\n\nThe Tournament begins...participants are:\n"+
@@ -90,6 +99,7 @@
        
     }
 
+    //asks Monsters for thier fight records
     public void showResults()
     {
         System.out.println("\n\nThe tournament if finished and the results are:");
