@@ -2,14 +2,24 @@
     this is the second assigment for COMP517
     https://github.com/dshamaeli/battleQueen
  */
-
-//impoert package to read data
-public class BattleQueen
+ 
+ //BattleQueen arranges tournament
+ public class BattleQueen
 {
-    private static final String tie = "DRAW";
-    private static final String win = "WON";
-    private static final String lost= "LOST";
-    private int battleNo = 0;
+    private static final String TIE = "DRAW"; //shows Draw result
+    private static final String WON = "WON";  //shows win result
+    private static final String LOST= "LOST"; //shows lost result
+    private static int battleNo = 0; //count battles
+    Monster monster1, monster2, monster3, monster4;
+
+    //constructor
+    public BattleQueen(Monster monster1, Monster monster2, Monster monster3, Monster monster4)
+    {
+        this.monster1 = monster1;
+        this.monster2 = monster2;
+        this.monster3 = monster3;
+        this.monster4 = monster4;
+    }
 
     private void fight(Monster monster1, Monster monster2)
     {
@@ -30,43 +40,43 @@ public class BattleQueen
         if (opponent1_strength > opponent2_strength)
         {
 
-            monster1.setResult(win);
-            monster2.setResult(lost);
+            monster1.setResult(WON);
+            monster2.setResult(LOST);
         }
         else
         {
             if (opponent1_strength < opponent2_strength)
             {
-                monster1.setResult(lost);
-                monster2.setResult(win);
+                monster1.setResult(LOST);
+                monster2.setResult(WON);
             }
             else
             {
                 if (opponent1_wrath > opponent2_wrath)
                {
-                   monster1.setResult(win);
-                   monster2.setResult(lost);
+                   monster1.setResult(WON);
+                   monster2.setResult(LOST);
                }
                else
                {
                    if (opponent1_wrath < opponent2_wrath)
                    {
-                       monster1.setResult(lost);
-                       monster2.setResult(win);
+                       monster1.setResult(LOST);
+                       monster2.setResult(WON);
                    }
                    else
                    {
-                       monster1.setResult(tie);
-                       monster2.setResult(tie);
+                       monster1.setResult(TIE);
+                       monster2.setResult(TIE);
                    }
                }
             }
         }
     }
 
-    public void tournament(Monster monster1, Monster monster2, Monster monster3, Monster monster4)
+    public void tournament()
     {
-        System.out.println("The Tournament begins...participants are:\n"+
+        System.out.println("\n\nThe Tournament begins...participants are:\n"+
                                                         monster1.showName()+",\n"+
                                                         monster2.showName()+",\n"+
                                                         monster3.showName()+"and\n"+
@@ -77,7 +87,11 @@ public class BattleQueen
         fight( monster2 , monster3 );
         fight( monster2 , monster4 );
         fight( monster3 , monster4 );
+       
+    }
 
+    public void showResults()
+    {
         System.out.println("\n\nThe tournament if finished and the results are:");
         monster1.showResults();
         monster2.showResults();

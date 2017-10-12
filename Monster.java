@@ -10,8 +10,8 @@
 public class Monster
 {
 
-    private int strength; //Monster's strength should be betwin 0-10
-    private int wrath; //Monster's wrath should be betwin 0-10
+    private int strength; //Monster's strength should be betWON 0-10
+    private int wrath; //Monster's wrath should be betWON 0-10
     private int battleNo = 0;//count's Monster's battles
     private String name; //Monster's name
     private String opponent1, opponent2, opponent3; //store Monster's opponents
